@@ -1,0 +1,81 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+
+\newcommand{\plain}{\color{black}}
+
+\definecolor{c1}{RGB}{114,0,172}
+\definecolor{c2}{RGB}{45,177,93}
+\definecolor{c3}{RGB}{251,0,29}
+\definecolor{c4}{RGB}{18,110,213}
+\definecolor{c5}{RGB}{255,160,109}
+\definecolor{c6}{RGB}{219,78,158}
+
+\newcommand{\InitialIrradiance}{\color{c1}}
+\newcommand{\wavelength}{\color{c2}}
+\newcommand{\range}{\color{c3}}
+\newcommand{\apertureDiameter}{\color{c4}}
+\newcommand{\firstCrossing}{\color{c5}}
+\newcommand{\displacement}{\color{c6}}
+
+\title{Directed Energy System Analysis}
+\author{Clay Rardin}
+
+\begin{document}
+
+\maketitle
+
+\section{General Setup of the Problem}
+Directed Energy weapon systems have several key "problems" that characterize the performance and properties from a given set of known values.  This approach is based on gathering the given information into groups which help identify what is given and what is still missing for a given analysis.  The groups identified are the Laser Properties, the System Properties, The Shot Properties, and Jitter Analysis.  The laser properties group is the lowest level group and encompasses the laser being used in the system.  The key properties are wavelength $\lambda$, the wavenumber k, and the initial Irradiance of the laser if it is available.  The system properties include everything from the laser to the output aperture of the system.  The key properties are the type of aperture (round, rectangle, etc.), the diameter of the exit aperture, the diffraction limited angular spread of the beam, the normalized diffraction limited angular spread of the beam, and $\sigma_{system}$ the jitter inherent in the system.  In this section jitter is treated as a single number.  A more detailed breakout of jitter factors, both internal and external, will be present in the jitter group.   Next is the shot properties group.  This encompasses the system as a whole firing at a target some range away.  This group includes the range, the offset from $I_{peak}$, the irradiance at the target, the shot time, the dwell time, the fluence on the target, and the spot size at a given range.  The last grouping is a breakdown of all the jitter factors affecting a system during a shot.  These include jitter induced from the platform, from the internal environment of the system, inherent in the system design, from the external environment the system is in, all jitter factors created from the shot, and any jitter induced from the selected target.
+
+\section{Example Problems}
+Here are some example problems taken from Paul Merritt's Beam Control book to practice using these groups to characterize, analyze, and solve these problems.
+
+\subsection{Problem 2.1}
+Assume: 
+\begin{itemize}
+\item $I_{o}$ = 100 $W/cm^2$
+\item A Square Aperture
+\item Aperture Width $= 10$ cm
+\item $\lambda = 1$ x $10^{-6}$ m
+\item Range $= 1 $ km
+\end{itemize}
+Find the irradiance of the far-field beam 0.5 cm from the peak.\\
+Using Matlab plot the shape of the beam from the peak to the zero crossing.
+
+\paragraph{Solution}
+First we start by categorizing the given information into our categories starting with the laser properties:
+
+\paragraph{Laser Properties}
+Laser properties include anything that relates solely to the laser system, or that can be caluclated from those values:
+\begin{itemize}
+\item $I_{o}$ = 100 $W/cm^2$ 
+\item $\lambda = 1$ x $10^{-6}$ m
+\item $k = \frac{2 \pi}{\lambda} = \frac{2 \pi}{1 x 10^{-6}} = 6.2$ x $10^{6}$ $m^{-1}$
+\end{itemize}
+
+\paragraph{System Properties}
+Next we define the system properties either given in the problem or calculated from what has already been captured.  It should be noted that the square aperture is important in choosing which equations we use to determine $\theta_{dl}$ as well as other values later:
+\begin{itemize}
+\item Square Aperture
+\item $D = 10$ cm
+\item $\theta_{dl} = \frac{\lambda}{D} = \frac{1 x 10^{-6}}{1 x 10^{-2}} = 1$ x $10^{-4}$
+\end{itemize}
+
+\paragraph{Shot Properties}
+The shot properties are defined either directly in the problem or calculated from what has already been captured.  It should be remembered that we need to use the rectangular equations for irradiance.
+\begin{itemize}
+\item Range ($R) = 1 $ km
+\item Displacement from peak (y) $= 0.5$ cm
+\item $\beta = \frac{1}{2} kD \sin{\theta} = 31$
+\item Irradiance (I) $ = I_{o} \big( \frac{\sin{\beta}}{\beta} \big) $
+\item 
+\end{itemize}
+
+\paragraph{Putting everything together}
+The first part of the problem asks for the irradiance at a point 0.5 cm from the peak.
+
+\end{document}
