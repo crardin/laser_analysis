@@ -1,0 +1,67 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+
+\newcommand{\plain}{\color{black}}
+
+\definecolor{c1}{RGB}{114,0,172}
+\definecolor{c2}{RGB}{45,177,93}
+\definecolor{c3}{RGB}{251,0,29}
+\definecolor{c4}{RGB}{18,110,213}
+\definecolor{c5}{RGB}{255,160,109}
+\definecolor{c6}{RGB}{219,78,158}
+
+\newcommand{\InitialIrradiance}{\color{c1}}
+\newcommand{\wavelength}{\color{c2}}
+\newcommand{\range}{\color{c3}}
+\newcommand{\apertureDiameter}{\color{c4}}
+\newcommand{\firstCrossing}{\color{c5}}
+\newcommand{\displacement}{\color{c6}}
+
+\title {Beam Expansion Analysis}
+\author {Clay Rardin}
+
+\begin{document}
+
+\maketitle
+
+\section{General Discussion of Beam Spreading for a Rectangular Aperture}
+The diffraction angle $\Delta\theta$ of a laser beam of wavelength $\lambda$ going through an aperture of width D is given by $\dfrac{\lambda}{D}$.  The central maximum of the beam in the far-field is independent of distance between aperture and screen.  The spreading of the central maximum with length is given by \\
+\begin{center}
+$L \Delta\theta = \dfrac{2L\lambda}{D}$
+\end{center}
+We can remove the slit width and just assume a beam of width D and it will behave identically.  After collimation, a "parallel" beam of light spreads just as if it emerged from a single opening.
+
+\subsection{Practice Problems}
+\begin{enumerate}
+\item Imagine a parallel beam of 546-nm light of width D = 0.5 mm propagating across the laboratory, a distance of 10 m.  Determine the final width of the beam due to diffraction spreading.
+\paragraph{Solution}
+ Using the equation $\dfrac{2L \lambda}{D}$ we get
+\begin{center}
+$W = \dfrac{2L\lambda}{D} = \dfrac{2 (10) (546 x 10^{-9})}{0.5 x 10^{-3}} = 21.8 mm $
+\end{center}
+\item Assume: 
+\begin{itemize}
+\item $I_{o}$ = 100 $W/cm^2$
+\item A Square Aperture
+\item Aperture Width $= 10$ cm
+\item $\lambda = 1$ x $10^{-6}$ m
+\item Range $= 1 $ km
+\end{itemize}
+Find the irradiance of the far-field beam 0.5 cm from the peak.\\
+Using Matlab plot the shape of the beam from the peak to the zero crossing.
+\paragraph{Solution}
+Using the equation $\dfrac{2L \lambda}{D}$ we get
+\begin{center}
+$W = \dfrac{2L \lambda}{D} = \dfrac{2 (1x10^3)(1x10^{-6})}{1x10^{-1}} = $
+\end{center}
+\end{enumerate}
+
+\section{General Discussion of Beam Spreading for a Circular Aperture}
+
+\subsection{Practice Problems}
+
+\end{document}
